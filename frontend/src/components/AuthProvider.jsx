@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   let loginUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/token/", {
+      const response = await fetch("https://fitness-app-on-render.onrender.com/api/token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const updateToken = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/token/refresh", {
+    const response = await fetch("https://fitness-app-on-render.onrender.com/api/token/refresh", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

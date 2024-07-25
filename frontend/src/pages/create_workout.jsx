@@ -41,7 +41,7 @@ export default function CreateWorkout() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (workout_id) {
-      await fetch("http://127.0.0.1:8000/api/update-workout", {
+      await fetch("https://fitness-app-on-render.onrender.com/api/update-workout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export default function CreateWorkout() {
       localStorage.removeItem("workout_id");
       navigate("/");
     } else {
-      await fetch("http://127.0.0.1:8000/api/create-workout", {
+      await fetch("https://fitness-app-on-render.onrender.com/api/create-workout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

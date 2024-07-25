@@ -31,7 +31,7 @@ export default function Workouts(props) {
     
 
     async function getWorkouts() {
-        let response = await fetch(`http://127.0.0.1:8000/api/workouts`)
+        let response = await fetch(`https://fitness-app-on-render.onrender.com/api/workouts`)
         let data = await response.json()
         setWorkouts(data)
     }

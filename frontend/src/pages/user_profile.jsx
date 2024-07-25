@@ -12,7 +12,7 @@ export default function UserProfile () {
 
     const getProfile = async() => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/userinfo/${params.profileId}`)
+            const response = await fetch(`https://fitness-app-on-render.onrender.com/api/userinfo/${params.profileId}`)
             const data = await response.json()
             setBio(data.bio)
         } catch(error){

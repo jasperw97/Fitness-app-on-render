@@ -13,7 +13,7 @@ export default function WorkoutComponent(props) {
   const handleDelete = async (pk) => {
     console.log(authTokens.access);
     const response = await fetch(
-      `http://127.0.0.1:8000/api/delete-workout/${pk}`,
+      `https://fitness-app-on-render.onrender.com/api/delete-workout/${pk}`,
       {
         method: "DELETE",
         headers: {
