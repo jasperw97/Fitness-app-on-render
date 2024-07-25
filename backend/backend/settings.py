@@ -31,7 +31,9 @@ SECRET_KEY = 'django-insecure-wv!azsb__&2khar2v9^(si^axq3pa@@iz^wiy#gtl=ix+_7#3g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "fitness-app-on-render.onrender.com"
+]
 
 
 # Application definition
