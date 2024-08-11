@@ -1,29 +1,34 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../components/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
-import accountsImage from "../assets/accounts.png";
-import passImage from "../assets/password.png";
-import loginImage from "../assets/login.png";
+
 
 export default function Login() {
   let navigate = useNavigate();
-  let { loginUser } = useContext(AuthContext);
-  let login = (e) => {
-    loginUser(e);
+  let { loginUser, loading, user } = useContext(AuthContext);
+  let login = async(e) => {
+    await loginUser(e)
     navigate("/");
   };
 
+  useEffect(() => {
+    if (user) {
+      navigate("/")
+    }
+  }, [])
+
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-slate-200">
+    <div className={`relative flex items-center justify-center w-screen h-screen ${loading && "opacity-30"} bg-slate-200`}>
       <div className="w-2/3 bg-white md:w-1/3 h-2/3 drop-shadow-md">
         <div className="px-12 pt-12 text-4xl font-bold text-slate-500">
           Welcome!
         </div>
         <form onSubmit={login} className="flex flex-col-reverse px-10">
-          <button className="w-1/4 h-12 mx-4 mt-8 font-light bg-blue-300 rounded-md hover:bg-blue-400">
+          <button className="w-1/4 h-12 mx-4 mt-8 font-light bg-blue-300 rounded-md hover:bg-blue-400" tabIndex={3}>
             Login
           </button>
           <input
+          tabIndex={2}
             type="password"
             id="password"
             name="password"
@@ -37,6 +42,7 @@ export default function Login() {
             Password
           </label>
           <input
+            tabIndex={1}
             type="text"
             id="username"
             placeholder="Username"

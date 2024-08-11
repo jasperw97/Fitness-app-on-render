@@ -16,12 +16,14 @@ export const AuthProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("authTokens"))
       : null
   );
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState(false);
+  let [tloading, setTLoading] = useState(false);
 
   let loginUser = async (e) => {
+    setLoading(true)
     e.preventDefault();
     try {
-      const response = await fetch("https://fitness-app-on-render.onrender.com/api/token/", {
+      const response = await fetch("http://127.0.0.1:8000/api/token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,6 +44,8 @@ export const AuthProvider = ({ children }) => {
     } catch(error){
       console.error("Error logging in:", error);
       alert(error.message);
+    } finally {
+      setLoading(false)
     }
     
   };
@@ -59,10 +63,11 @@ export const AuthProvider = ({ children }) => {
     authTokens: authTokens,
     loginUser: loginUser,
     logoutUser: logoutUser,
+    loading: loading
   };
 
   const updateToken = async () => {
-    const response = await fetch("https://fitness-app-on-render.onrender.com/api/token/refresh", {
+    const response = await fetch("http://127.0.0.1:8000/api/token/refresh", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,8 +84,8 @@ export const AuthProvider = ({ children }) => {
       logoutUser();
     }
 
-    if (loading) {
-      setLoading(false);
+    if (tloading) {
+      setTLoading(false);
     }
   };
 
@@ -92,7 +97,7 @@ export const AuthProvider = ({ children }) => {
       }
     }, REFRESH_INTERVAL);
     return () => clearInterval(interval);
-  }, [authTokens, loading]);
+  }, [authTokens, tloading]);
 
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>

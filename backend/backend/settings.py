@@ -32,7 +32,8 @@ SECRET_KEY = 'django-insecure-wv!azsb__&2khar2v9^(si^axq3pa@@iz^wiy#gtl=ix+_7#3g
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "fitness-app-on-render.onrender.com"
+    "fitness-app-on-render.onrender.com",
+    "127.0.0.1",
 ]
 
 
@@ -98,7 +99,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://mydb_oy20_user:Nko417CdgJrEjGNsEwVpxZpJhUlO5OMh@dpg-cqgqrbks1f4s73beda2g-a.singapore-postgres.render.com/mydb_oy20")
+# DATABASES["default"] = dj_database_url.parse("postgresql://mydb_oy20_user:Nko417CdgJrEjGNsEwVpxZpJhUlO5OMh@dpg-cqgqrbks1f4s73beda2g-a.singapore-postgres.render.com/mydb_oy20")
 
 # DATABASES = {
 #     'default': {

@@ -6,11 +6,13 @@ export default function Register() {
   let [password, setPassword] = useState("");
   let [bio, setBio] = useState("");
   let navigate = useNavigate();
+  let [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
-      const response = await fetch("https://fitness-app-on-render.onrender.com/api/user/register/", {
+      const response = await fetch("http://127.0.0.1:8000/api/user/register/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,12 +34,14 @@ export default function Register() {
       alert(
         "Something went wrong while registering! The username might be used"
       );
+    } finally {
+      setLoading(false)
     }
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-slate-200">
-      <div className="flex flex-col w-3/4 pb-8 bg-white sm:w-2/3 md:w-1/2 h-fit drop-shadow-md">
+    <div className={`flex items-center justify-center w-screen min-h-screen bg-slate-200 ${loading && "opacity-30"}`}>
+      <div className="flex flex-col w-3/4 pb-8 my-10 bg-white sm:w-2/3 md:w-1/2 h-fit drop-shadow-md">
         <div className="px-16 pt-12 mb-2 text-4xl font-bold text-slate-500">
           Create an Account
         </div>
@@ -50,6 +54,7 @@ export default function Register() {
             <input
               name="password"
               value={password}
+              tabIndex={2}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               id="password"
@@ -65,6 +70,7 @@ export default function Register() {
             <input
               type="text"
               name="username"
+              tabIndex={1}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               id="username"
@@ -83,6 +89,7 @@ export default function Register() {
             <textarea
               name="bio"
               value={bio}
+              tabIndex={3}
               onChange={(e) => setBio(e.target.value)}
               id="bio"
               placeholder="Bio"
@@ -95,7 +102,7 @@ export default function Register() {
               Bio
             </label>
           </div>
-          <button className="px-6 py-4 mt-8 font-light text-center transition bg-blue-300 rounded-md w-fit mx-14 h-fit hover:bg-blue-400 place-self-center sm:place-self-start">
+          <button tabIndex={4} className="px-6 py-4 mt-8 font-light text-center transition bg-blue-300 rounded-md w-fit mx-14 h-fit hover:bg-blue-400 place-self-center sm:place-self-start">
             Sign Up
           </button>
         </form>

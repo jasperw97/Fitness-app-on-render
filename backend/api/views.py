@@ -21,7 +21,7 @@ class CreateWorkout(mixins.CreateModelMixin, APIView):
         workout = Workout.objects.create(title=data["title"], user=user)
         for exercise in data["exercises"]:
             exersice_name, created = ExerciseList.objects.get_or_create(name=exercise["name"])
-            exercise_object = Exercise.objects.create(name=exersice_name, load=exercise["load"], sets=exercise["sets"], reps=exercise["reps"])
+            exercise_object = Exercise.objects.create(name=exersice_name, load=exercise["load"], sets=exercise["sets"], reps=exercise["reps"], description=exercise["description"])
             workout.exercises.add(exercise_object)
         
         serialized = WorkoutSerializer(workout)
@@ -61,7 +61,7 @@ class UpdateWorkout(mixins.CreateModelMixin, APIView):
         new_workout = Workout.objects.create(title=data["title"], user=user)
         for exercise in data["exercises"]:
             exersice_name, created = ExerciseList.objects.get_or_create(name=exercise["name"])
-            exercise_object = Exercise.objects.create(name=exersice_name, load=exercise["load"], sets=exercise["sets"], reps=exercise["reps"])
+            exercise_object = Exercise.objects.create(name=exersice_name, load=exercise["load"], sets=exercise["sets"], reps=exercise["reps"], description=exercise["description"])
             new_workout.exercises.add(exercise_object)
         return Response("ok")
 

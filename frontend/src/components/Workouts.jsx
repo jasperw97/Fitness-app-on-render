@@ -1,12 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import WorkoutComponent from "../components/WorkoutComponent";
 import SearchContext from "../context/SearchProvider";
-
+import CardSkeleton from "./CardSkeleton";
 
 export default function Workouts(props) {
     let [workouts, setWorkouts] = useState([]) 
     let [filteredworkouts, setFilteredWorkouts] = useState([])
     let {query} = useContext(SearchContext)
+    let [loading, setLoading] = useState(false)
     
     const filterWorkouts = () => {
         if (query !== "") {
@@ -31,16 +32,22 @@ export default function Workouts(props) {
     
 
     async function getWorkouts() {
-        let response = await fetch(`https://fitness-app-on-render.onrender.com/api/workouts`)
+        setLoading(true)
+        let response = await fetch(`http://127.0.0.1:8000/api/workouts`)
         let data = await response.json()
+        console.log(data)
         setWorkouts(data)
+        setLoading(false)
     }
 
     return(
         <div className="flex flex-col items-center w-full pt-16 pb-24">
+            {loading && (
+                <CardSkeleton cards={4}></CardSkeleton>
+                )}
+            
             {filteredworkouts.map((workout, index)=>
-                    <WorkoutComponent key={index} workout={workout}></WorkoutComponent>
-                   
+                    <WorkoutComponent key={index} workout={workout}></WorkoutComponent>     
             )}
         </div>
 

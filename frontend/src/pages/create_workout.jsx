@@ -1,14 +1,14 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../components/AuthProvider";
-import cancel from "../assets/x-circle.svg";
+
 
 export default function CreateWorkout() {
   let old_exercises = JSON.parse(localStorage.getItem("old_exercises"));
   let old_title = localStorage.getItem("old_title");
   let workout_id = localStorage.getItem("workout_id");
   let [exercises, setExercises] = useState(
-    old_exercises ? old_exercises : [{ name: "", sets: 0, reps: 0, load: 0.0 }]
+    old_exercises ? old_exercises : [{ name: "", sets: 0, reps: 0, load: 0.0, description: "" }]
   );
   let [title, setTitle] = useState(old_title ? old_title : "");
   let navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function CreateWorkout() {
 
   const handleAddField = () => {
     const temp = [...exercises];
-    temp.push({ name: "", sets: 0, reps: 0, load: 0.0 });
+    temp.push({ name: "", sets: 0, reps: 0, load: 0.0, description: "" });
     setExercises(temp);
   };
 
@@ -41,7 +41,7 @@ export default function CreateWorkout() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (workout_id) {
-      await fetch("https://fitness-app-on-render.onrender.com/api/update-workout", {
+      await fetch("http://127.0.0.1:8000/api/update-workout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export default function CreateWorkout() {
       localStorage.removeItem("workout_id");
       navigate("/");
     } else {
-      await fetch("https://fitness-app-on-render.onrender.com/api/create-workout", {
+      await fetch("http://127.0.0.1:8000/api/create-workout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -186,6 +186,8 @@ export default function CreateWorkout() {
               <textarea
                 name="description"
                 id="description"
+                value = {exercise.description}
+                onChange={(e) => handleExerciseChange(index, e)}
                 className="p-3 text-sm font-light transition rounded-md outline-none bg-slate-100 focus:border focus:border-slate-400"
               ></textarea>
             </div>
