@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -7,6 +8,8 @@ export default function Register() {
   let [bio, setBio] = useState("");
   let navigate = useNavigate();
   let [loading, setLoading] = useState(false)
+
+  const {t} = useTranslation()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,7 +46,7 @@ export default function Register() {
     <div className={`flex items-center justify-center w-screen min-h-screen bg-slate-200 ${loading && "opacity-30"}`}>
       <div className="flex flex-col w-3/4 pb-8 my-10 bg-white sm:w-2/3 md:w-1/2 h-fit drop-shadow-md">
         <div className="px-16 pt-12 mb-2 text-4xl font-bold text-slate-500">
-          Create an Account
+          {t("cea")}
         </div>
         <form
           className="grid grid-cols-1 sm:grid-cols-2"
@@ -65,7 +68,7 @@ export default function Register() {
               htmlFor="password"
               className="px-1 mx-8 text-center text-gray-400 transition scale-90 bg-white peer-placeholder-shown/password:translate-y-12 translate-y-7 w-fit h-fit peer-focus/password:translate-y-7 peer-focus/password:text-blue-500 peer-placeholder-shown/password:scale-100 peer-focus/password:scale-90"
             >
-              Password
+              {t("password")}
             </label>
             <input
               type="text"
@@ -81,7 +84,7 @@ export default function Register() {
               htmlFor="username"
               className="px-1 mx-8 text-center text-gray-400 transition scale-90 bg-white peer-placeholder-shown/username:translate-y-12 translate-y-7 w-fit h-fit peer-focus/username:translate-y-7 peer-focus/username:text-blue-500 peer-placeholder-shown/username:scale-100 peer-focus/username:scale-90"
             >
-              Username
+              {t("username")}
             </label>
           </div>
           {/* Bio input */}
@@ -99,16 +102,16 @@ export default function Register() {
               htmlFor="bio"
               className="peer-placeholder-shown/bio:-translate-y-[135px] bg-white scale-90 peer-placeholder-shown/bio:scale-100 w-fit h-fit px-1 translate-x-4 text-gray-400 peer-focus/bio:-translate-y-[156px] -translate-y-[156px] peer-focus/bio:bg-white peer-focus/bio:text-blue-500 peer-focus/bio:font-extralight peer-focus/bio:scale-90 transition"
             >
-              Bio
+              {t("bio")}
             </label>
           </div>
           <button tabIndex={4} className="px-6 py-4 mt-8 font-light text-center transition bg-blue-300 rounded-md w-fit mx-14 h-fit hover:bg-blue-400 place-self-center sm:place-self-start">
-            Sign Up
+            {t("signup")}
           </button>
         </form>
 
         <p className="px-12 mt-16 text-sm text-center text-gray-500 font-extralight">
-          Already have an account? <span className="underline">Login</span>
+          {t("aha")} <span className="underline">{t("login")}</span>
         </p>
       </div>
     </div>

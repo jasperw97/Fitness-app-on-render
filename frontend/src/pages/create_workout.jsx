@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../components/AuthProvider";
+import { useTranslation } from "react-i18next";
 
 
 export default function CreateWorkout() {
@@ -13,6 +14,8 @@ export default function CreateWorkout() {
   let [title, setTitle] = useState(old_title ? old_title : "");
   let navigate = useNavigate();
   let { user, authTokens } = useContext(AuthContext);
+
+  const {t} = useTranslation()
 
   const handleExerciseChange = (i, event) => {
     const { name, value } = event.target;
@@ -86,7 +89,7 @@ export default function CreateWorkout() {
             htmlFor="title"
             className="block mb-2 text-3xl font-bold text-gray-600"
           >
-            Workout Title
+            {t("wtitle")}
           </label>
           <input
             type="text"
@@ -107,7 +110,7 @@ export default function CreateWorkout() {
                   htmlFor="name"
                   className="block mb-2 text-xl font-medium text-gray-600"
                 >
-                  Exercise Name
+                  {t("ename")}
                 </label>
                 <input
                   type="text"
@@ -123,7 +126,7 @@ export default function CreateWorkout() {
                   htmlFor="sets"
                   className="block mb-2 text-xl font-medium text-gray-600"
                 >
-                  Sets
+                  {t("sets")}
                 </label>
                 <input
                   type="number"
@@ -140,7 +143,7 @@ export default function CreateWorkout() {
                   htmlFor="reps"
                   className="block mb-2 text-xl font-medium text-gray-600"
                 >
-                  Reps
+                  {t("reps")}
                 </label>
                 <input
                   type="number"
@@ -154,9 +157,9 @@ export default function CreateWorkout() {
               <div className="ml-6 mr-3">
                 <label
                   htmlFor="load"
-                  className="block mb-2 text-xl font-medium text-gray-600"
+                  className="block mb-2 text-xl font-medium text-gray-600 whitespace-nowrap"
                 >
-                  Load(Kg)
+                  {t("load")}
                 </label>
                 <input
                   type="number"
@@ -181,7 +184,7 @@ export default function CreateWorkout() {
                 htmlFor="description"
                 className="block mb-2 text-xl font-medium text-gray-600"
               >
-                Description
+                {t("des")}
               </label>
               <textarea
                 name="description"
@@ -201,10 +204,10 @@ export default function CreateWorkout() {
             type="button"
             className="p-4 text-sm font-light transition rounded-md bg-slate-200 hover:bg-slate-400"
           >
-            Add Exercise
+            {t("ae")}
           </button>
           <button className="p-4 text-sm font-light transition bg-blue-200 rounded-md hover:bg-blue-400">
-            Submit
+            {t("sub")}
           </button>
         </div>
       </form>

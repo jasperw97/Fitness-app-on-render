@@ -12,6 +12,7 @@ import './index.css'
 import Guides from './pages/guides_home';
 import StarterGuide from './pages/guides/starter';
 import About from './pages/about';
+import './utils/i18n';
 
 const router = createBrowserRouter([
   {

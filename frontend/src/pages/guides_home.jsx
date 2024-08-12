@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar"
 import gym from "../assets/gym.jpg"
 import { Link } from "react-router-dom"
+import Skeleton from "react-loading-skeleton"
 
 export default function Guides() {
     return(
@@ -9,7 +10,7 @@ export default function Guides() {
             {/* The image and intro */}
             <div className="relative flex items-center w-screen h-screen bg-white">
                 <div className="w-1/2">
-                <img src={gym} className="scale-75 rounded-lg drop-shadow-md" />
+                <img src={gym} className="scale-75 rounded-lg drop-shadow-md"  />
                 </div>
                 <div className="w-1/2 pl-6 pr-20">
                 <h1 className="text-6xl font-medium text-gray-700">Working Out isn't <span className="">Difficult!</span></h1>

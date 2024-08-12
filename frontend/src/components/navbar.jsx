@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import AuthContext from "../components/AuthProvider";
 import SearchContext from "../context/SearchProvider";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 
 export default function Navbar() {
@@ -9,6 +10,8 @@ export default function Navbar() {
     let [searchbar, setSearchbar] = useState(false);
     let { user, logoutUser } = useContext(AuthContext);
     let { query, setQuery } = useContext(SearchContext);
+
+    const {t} = useTranslation()
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -38,17 +41,17 @@ export default function Navbar() {
         >
           <Link to={"/workouts"}>
           <li
-            className={`mx-8 my-6 font-medium transition hover:text-gray-500 hover:cursor-pointer`}
+            className={`mx-8 my-6 font-medium whitespace-nowrap transition hover:text-gray-500 hover:cursor-pointer`}
           >
-            WORKOUTS
+            {t("workouts")}
           </li>
           </Link>
           
           <Link to={"/guides"}>
           <li
-            className={`mx-8 my-6 font-medium transition hover:text-gray-500 hover:cursor-pointer`}
+            className={`mx-8 my-6 font-medium transition hover:text-gray-500 hover:cursor-pointer whitespace-nowrap`}
           >
-            GUIDES
+            {t("guides")}
           </li>
           </Link>
           
@@ -58,25 +61,25 @@ export default function Navbar() {
                 user ? "block" : "hidden"
               }`}
             >
-              CREATE WORKOUT
+              {t("cworkout")}
             </li>
           </Link>
           <Link to={"/login"}>
             <li
-              className={`mx-8 my-6 font-medium transition hover:text-gray-500 hover:cursor-pointer ${
+              className={`mx-8 my-6 font-medium transition hover:text-gray-500 whitespace-nowrap hover:cursor-pointer ${
                 user ? "hidden" : "block"
               }`}
             >
-              LOGIN
+              {t("login")}
             </li>
           </Link>
           <li
             onClick={logoutUser}
-            className={`mx-8 my-6 font-medium transition hover:text-gray-500 hover:cursor-pointer ${
+            className={`mx-8 my-6 font-medium transition hover:text-gray-500 whitespace-nowrap hover:cursor-pointer ${
               user ? "block" : "hidden"
             }`}
           >
-            LOGOUT
+            {t("logout")}
           </li>
           <i
             className={`hidden md:block mx-8 my-6 font-medium transition ${
