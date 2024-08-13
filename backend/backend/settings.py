@@ -159,7 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://fitness-app-on-render-1.onrender.com",
-    "https://fittogetherr.netlify.app "
+    "https://fittogetherr.netlify.app"
 ]
 
 REST_FRAMEWORK = {
