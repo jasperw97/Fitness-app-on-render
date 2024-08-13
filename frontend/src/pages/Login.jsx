@@ -21,12 +21,12 @@ export default function Login() {
 
   return (
     <div className={`relative flex items-center justify-center w-screen h-screen ${loading && "opacity-30"} bg-slate-200`}>
-      <div className="w-2/3 bg-white md:w-1/3 h-2/3 drop-shadow-md">
+      <div className="w-4/5 bg-white md:w-1/3 h-4/5 md:h-2/3 drop-shadow-md">
         <div className="px-12 pt-12 text-4xl font-bold text-slate-500">
           {t("welcome")}
         </div>
         <form onSubmit={login} className="flex flex-col-reverse px-10">
-          <button className="w-1/4 h-12 mx-4 mt-8 font-light bg-blue-300 rounded-md hover:bg-blue-400" tabIndex={3}>
+          <button className="h-12 px-4 mx-4 mt-8 font-light bg-blue-300 rounded-md w-fit hover:bg-blue-400" tabIndex={3}>
             {t("login")}
           </button>
           <input

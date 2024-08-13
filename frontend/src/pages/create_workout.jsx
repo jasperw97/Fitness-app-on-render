@@ -60,7 +60,7 @@ export default function CreateWorkout() {
       localStorage.removeItem("old_title");
       localStorage.removeItem("old_exercises");
       localStorage.removeItem("workout_id");
-      navigate("/");
+      navigate("/workouts");
     } else {
       await fetch("http://127.0.0.1:8000/api/create-workout", {
         method: "POST",
@@ -73,7 +73,7 @@ export default function CreateWorkout() {
           user: user.username,
         }),
       });
-      navigate("/");
+      navigate("/workouts");
     }
   };
 

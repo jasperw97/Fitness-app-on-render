@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import dj_database_url
 import os
+from . import keys
 
 
 
@@ -99,7 +100,7 @@ DATABASES = {
     }
 }
 
-# DATABASES["default"] = dj_database_url.parse("postgresql://mydb_oy20_user:Nko417CdgJrEjGNsEwVpxZpJhUlO5OMh@dpg-cqgqrbks1f4s73beda2g-a.singapore-postgres.render.com/mydb_oy20")
+DATABASES["default"] = dj_database_url.parse(keys.db_url)
 
 # DATABASES = {
 #     'default': {

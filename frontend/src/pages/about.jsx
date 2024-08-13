@@ -109,7 +109,6 @@ export default function About() {
                     <h1 className="w-1/2 text-base tracking-wide text-gray-800 md:text-xl font-extralight">Periodization Training</h1>
                     <div className="flex space-x-2">
                         <div className="p-2 text-xs font-light text-gray-800 bg-red-100 rounded-lg md:text-sm">Advanced</div>
-                        <div className="p-2 text-xs font-light text-gray-800 bg-white rounded-lg md:text-sm">Gym</div>
                         <div className="p-2 text-xs font-light text-gray-800 bg-green-100 rounded-lg md:text-sm">Strength</div>
                     </div>
         </div>

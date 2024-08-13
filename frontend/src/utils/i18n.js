@@ -10,7 +10,7 @@ const resources = {
       community: "a community for everyone.",
       trackworkouts1: "Track and Share",
       trackworkouts2: "Workouts",
-      twpar: "Track your workouts with ease, and gain inspirations from other",
+      twpar: "Track your workouts with ease, and gain inspirations from other people's workouts!",
       fgtitle: "Fitness Guides",
       fgpar: "Well crafted fitness guides, for all levels!",
       workouts:"WORKOUTS",

@@ -1,0 +1,1 @@
+db_url = "postgres://default:lys4m7xGwjRi@ep-old-block-a1k402vh.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require"
