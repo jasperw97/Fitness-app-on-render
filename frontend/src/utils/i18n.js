@@ -33,7 +33,9 @@ const resources = {
       load:"Load(Kg)",
       des:"Description",
       ae:"Add Exercise",
-      sub:"Submit"
+      sub:"Submit",
+      guideintro: "Working Out isn't Difficult!",
+      guideintrop: "Here, you can find guides on fitness knowledges for all levels. These guides will help you through your fitness journey!",
     }
   },
   zh: {
@@ -64,7 +66,9 @@ const resources = {
       load:"重量（Kg）",
       des:"補充說明",
       ae:"新增動作",
-      sub:"送出"
+      sub:"送出",
+      guideintro: "訓練並不困難",
+      guideintrop: "這裡有適合各種程度的健身手冊，幫助你打造最適合自己的訓練。",
     }
   }
 };
