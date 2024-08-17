@@ -64,7 +64,7 @@ export default function WorkoutComponent(props) {
               {exercise.name}
             </h1>
             {exercise.sets != 0 && (
-              <p className="text-xl tracking-widest font-extralight text-zinc-500 place-self-end">
+              <p className="text-xl tracking-widest font-extralight text-zinc-500 place-self-end text-end">
               {exercise.sets}x{exercise.reps} {exercise.load}kg
             </p>
             )}
