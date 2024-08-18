@@ -27,15 +27,15 @@ export default function UserProfile () {
         getProfile()
     }, [])
     return(
-        <div className="relative flex flex-col items-center min-h-screen bg-slate-200">
+        <div className="relative flex flex-col items-center min-h-screen bg-white">
             <Navbar></Navbar>
-            <div className="w-2/3 mt-24 bg-white rounded-md">
+            <div className="w-2/3 mt-24 bg-white border border-gray-400 rounded-md">
                 <div className="flex flex-col items-center p-4">
                     <i className="mb-3 text-gray-800 text-7xl bi bi-person-circle"></i>
                     <p className="mb-3 text-xl">@{params.profileId}</p>
                     <p className="font-mono font-light">{bio ? (bio) : ""}</p>
                 </div>
-                <hr  className="mx-1 border-2 border-gray-100 rounded-md"/>
+                
                 
                 
                 

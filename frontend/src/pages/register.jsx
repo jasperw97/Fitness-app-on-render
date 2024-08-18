@@ -43,7 +43,7 @@ export default function Register() {
   };
 
   return (
-    <div className={`flex items-center justify-center w-screen min-h-screen bg-slate-200 ${loading && "opacity-30"}`}>
+    <div className={`flex items-center justify-center w-screen min-h-screen bg-slate-100 ${loading && "opacity-30"}`}>
       <div className="flex flex-col w-3/4 pb-8 my-10 bg-white sm:w-2/3 md:w-1/2 h-fit drop-shadow-md">
         <div className="px-16 pt-12 mb-2 text-4xl font-bold text-slate-500">
           {t("cea")}

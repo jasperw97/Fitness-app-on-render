@@ -78,7 +78,7 @@ export default function CreateWorkout() {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-slate-200">
+    <div className="flex items-center justify-center w-screen h-screen bg-slate-100">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col w-5/6 px-16 py-4 overflow-auto bg-white rounded-sm md:w-1/2 h-5/6 flex-nowrap"

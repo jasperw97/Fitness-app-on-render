@@ -33,8 +33,17 @@ export default function Guides() {
                     <h1 className="w-1/2 text-lg tracking-wide text-gray-800 md:text-2xl font-extralight">Getting Started</h1>
                     <div className="flex justify-end w-1/2 space-x-2">
                         <div className="p-2 text-xs font-light text-gray-800 bg-blue-100 rounded-lg md:text-base">Beginner</div>
-                        <div className="p-2 text-xs font-light text-gray-800 bg-white rounded-lg md:text-base">Gym</div>
-                        
+                        <div className="p-2 text-xs font-light text-gray-800 bg-white rounded-lg md:text-base">Gym</div> 
+                    </div>
+                </div>
+                </Link>
+
+                <Link to={"/guide2"} className="flex justify-center w-full">
+                <div className="flex items-center justify-between w-full px-3 py-4 mx-4 mt-10 transition bg-gray-100 md:px-6 md:py-8 md:mx-0 md:w-3/5 rounded-xl hover:scale-105 active:bg-gray-200">
+                    <h1 className="w-1/2 text-lg tracking-wide text-gray-800 md:text-2xl font-extralight">Creating your Workout Schedule</h1>
+                    <div className="flex justify-end w-1/2 space-x-2">
+                        <div className="p-2 text-xs font-light text-gray-800 bg-green-100 rounded-lg md:text-base">All Levels</div>
+                        <div className="p-2 text-xs font-light text-gray-800 bg-white rounded-lg md:text-base">Gym</div>  
                     </div>
                 </div>
                 </Link>

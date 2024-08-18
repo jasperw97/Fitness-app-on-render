@@ -20,7 +20,7 @@ export default function Login() {
   const {t} = useTranslation()
 
   return (
-    <div className={`relative flex items-center justify-center w-screen h-screen ${loading && "opacity-30"} bg-slate-200`}>
+    <div className={`relative flex items-center justify-center w-screen h-screen ${loading && "opacity-30"} bg-slate-100`}>
       <div className="w-4/5 bg-white md:w-1/3 h-4/5 md:h-2/3 drop-shadow-md">
         <div className="px-12 pt-12 text-4xl font-bold text-slate-500">
           {t("welcome")}
