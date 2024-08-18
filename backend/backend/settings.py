@@ -36,6 +36,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "fitness-app-on-render.onrender.com",
     "127.0.0.1",
+    ".vercel.app"
 ]
 
 
