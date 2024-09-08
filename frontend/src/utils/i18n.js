@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import * as a3 from "./guide_content/lower_home"
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -36,6 +37,22 @@ const resources = {
       sub:"Submit",
       guideintro: "Working Out isn't Difficult!",
       guideintrop: "Here, you can find guides on fitness knowledges for all levels. These guides will help you through your fitness journey!",
+      a3t:a3.title_en,
+      a3a:a3.author,
+      a3p1: a3.p1,
+      a3p2: a3.p2,
+      a3p3: a3.p3,
+      a3p4: a3.p4,
+      a3p5: a3.p5,
+      a3p6: a3.p6,
+      a3p7: a3.p7,
+      a3p8: a3.p8,
+      a3p9: a3.p9,
+      a3p10: a3.p10,
+      a3p11: a3.p11,
+      a3t2:a3.t2,
+      a3t6:a3.t6,
+      a3t9:a3.t9,
     }
   },
   zh: {
@@ -69,6 +86,22 @@ const resources = {
       sub:"送出",
       guideintro: "訓練並不困難",
       guideintrop: "這裡有適合各種程度的健身手冊，幫助你打造最適合自己的訓練。",
+      a3t:a3.title_zh,
+      a3a:a3.author,
+      a3p1: a3.p1z,
+      a3p2: a3.p2z,
+      a3p3: a3.p3z,
+      a3p4: a3.p4z,
+      a3p5: a3.p5z,
+      a3p6: a3.p6z,
+      a3p7: a3.p7z,
+      a3p8: a3.p8z,
+      a3p9: a3.p9z,
+      a3p10: a3.p10z,
+      a3p11: a3.p11z,
+      a3t2: a3.t2z,
+      a3t6: a3.t6z,
+      a3t9: a3.t9z
     }
   }
 };

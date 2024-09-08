@@ -202,7 +202,7 @@ export default function CreateWorkout() {
           <button
             onClick={handleAddField}
             type="button"
-            className="p-4 text-sm font-light transition rounded-md bg-slate-200 hover:bg-slate-400"
+            className="p-4 mr-10 text-sm font-light transition rounded-md bg-slate-200 hover:bg-slate-400"
           >
             {t("ae")}
           </button>

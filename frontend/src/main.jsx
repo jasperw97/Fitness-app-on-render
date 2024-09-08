@@ -14,6 +14,7 @@ import StarterGuide from './pages/guides/starter';
 import About from './pages/about';
 import './utils/i18n';
 import WorkoutSchedule from './pages/guides/workout_schedule';
+import LowerHomeWorkout from './pages/guides/lower_home';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path:"/guide2",
     element: <WorkoutSchedule></WorkoutSchedule>
+  },
+  {
+    path:"/guide3",
+    element: <LowerHomeWorkout></LowerHomeWorkout>
   },
 
 ]);

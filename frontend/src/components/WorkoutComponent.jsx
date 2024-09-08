@@ -47,7 +47,7 @@ export default function WorkoutComponent(props) {
   };
 
   return (
-    <div className="w-2/3 pb-3 my-8 bg-white border border-gray-400 rounded-md md:w-1/3">
+    <div className="w-4/5 pb-3 my-8 bg-white border border-gray-400 rounded-md md:w-1/3">
       <Link to={`/profile/${props.workout.user}`}><div className="flex items-center justify-between w-full p-2 py-3 bg-slate-100 rounded-t-md">
         
         {/* <i className="mx-4 text-3xl bi bi-person-circle"></i> */}
