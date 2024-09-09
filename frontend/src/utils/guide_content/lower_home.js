@@ -7,11 +7,11 @@ export const p2 = `It is important to build a solid base before putting your bod
                 Isometric training, during which your muscles are neither lengthening nor shortening, 
                 is an effective way to recruit muscles at certain positions and teach your body how to 
                 use the muscles correctly.`
-export const p3 = `Glute Bridge Holds: Lie down on a mat and lift perform a glute bridge, but stop at 
+export const p3 = `Glute Bridge Holds: Lie down on a mat and then perform a glute bridge, but stop at 
                 the top and hold for 15 seconds. During this 15 seconds, squeeze your glutes as hard as 
                 possible and increase the time as you progress. Do this for every exercise in this section. 
                 Another way to progress this exercise is to do it with just one leg.`
-export const p4 = `Wall Sits: Position your back against the wall and slowly lower your body till your knees reach 
+export const p4 = `Wall Sits: Position your back against the wall and slowly lower your body until your knees reach 
                 90 degrees just like you are sitting on an imaginary chair. During the exercise, focus on pushing your feet into the ground. `
 export const p5 = `Lunge Holds: Perform a lunge and hold at the lowest point. Focus on squeezing and trying to bring your front 
                 and back feet together, but not actually moving your feet.`
@@ -41,7 +41,7 @@ export const t2z = "基礎"
 export const p2z = `在進行高強度訓練之前，建立穩固的基礎是非常重要的。等長訓練是一種在肌肉不延長也不縮短的過程中，
 能夠有效徵召特定位置的肌肉，並教導身體如何正確使用這些肌肉的方法。`
 export const p3z = `橋式撐：躺在墊子上，進行臀橋運動，但在最高點停下來，並撐15秒。在這15秒內，儘可能地收緊臀部肌肉，並隨著進步逐漸延長時間。本段落中的每個動作都應該這樣進行。另一種進階方式是只用單腿進行此動作。`
-export const p4z = `太空椅：將背部靠在牆上，慢慢降低身體，直到膝蓋達到90度，就像坐在一張想像中的椅子上一樣。在進行此動作時，專注於將雙腳用力推向地面。`
+export const p4z = `靠牆蹲：將背部靠在牆上，慢慢降低身體，直到膝蓋達到90度撐住，就像坐在一張想像中的椅子上一樣。在進行此動作時，專注於將雙腳用力推向地面。`
 export const p5z = `弓箭步撐：進行弓步動作，並在最低點停留。專注於收緊肌肉，並嘗試將前腳和後腳往中間移動，但實際上不要移動雙腳。`
 export const t6z = "中階"
 export const p6z = `現在我們開始進行更具挑戰性的訓練。`
